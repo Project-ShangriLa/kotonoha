@@ -30,8 +30,11 @@ year = ARGV[0]
 cours = ARGV[1]
 
 title_list = Shangrila::Sora.new().get_title_list(year, cours)
-#p title_list
+
 puts build_data(title_list)
+
+
+#p Shangrila::Sora.new().get_flat_data(year, cours, ['title', 'twitter_hash_tag'])
 
 #twitter_accaount_map = Shangrila::Sora.new().get_map_with_key_title(year, cours, 'twitter_account')
 #p twitter_accaount_map

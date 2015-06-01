@@ -34,6 +34,14 @@ module Shangrila
       master_map
     end
 
+    ## Shangrila::Sora.new().get_flat_data(year, cours, ['title', 'twitter_hash_tag'])
+    def get_flat_data(year, cours, property_list)
+      master_list = get_master_data(year, cours)
+      records = master_list.map{|master| property_list.map{|p|master[p]} }
+
+      records
+    end
+
   end
 
 end
